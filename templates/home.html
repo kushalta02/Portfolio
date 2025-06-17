@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Portfolio</title>
+  <link rel="stylesheet" href="\static\assets\css\style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<script>
+  document.addEventListener('mousemove', (e) => {
+  document.body.style.setProperty('--mouse-x', `${e.clientX}px`);
+  document.body.style.setProperty('--mouse-y', `${e.clientY}px`);
+});</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    easing: 'ease-out-quart',
+    once: true
+  });
+</script>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-left">
+        <li><a href="#three-panel" >Home</a></li>
+        <li><a href="#about" >About me</a></li>
+        <li><a href="/projects" >Skills</a></li>
+
+      </ul>
+    
+      <span class="logo-center">MyPortfolio</span>
+    
+      <ul class="nav-right">
+        <li><a href="resume" >Resume</a></li>
+        <li><a href="/contact" >Contact</a></li>
+      </ul>
+    </nav>
+    
+  </header>
+
+  <main class="three-panel" id="three-panel">
+    <!-- Left Panel -->
+    <section class="left-panel">
+      <h1>Hello there !</h1>
+      <h2><span class="line"></span> I'm Kushalta</h2>
+      <p> DEVELOPER</p>
+      <button class="cv">Download CV</button>
+    </section>
+
+    <!-- Center Panel -->
+    <div class="center-panel">
+    <div class="portrait-container">
+    <img src="your-photo.jpg" alt="Kushalta" class="tech-portrait">
+    <div class="tagline-overlay">
+      <p>Transforming ideas</p>
+      <p>into <span class="highlight"> systems</span></p>
+    </div>
+    <div class="skill-badges">
+      <div class="badge" data-skill="Python">🐍</div>
+      <div class="badge" data-skill="C++">🧠</div>
+      <div class="badge" data-skill="AI">🤖</div>
+    </div>
+  </div>
+</div>
+
+    <!-- Right Panel -->
+    <section class="right-panel">
+      <p class="description">
+      Hi! I'm a passionate Full-Stack Developer specializing in optimized solutions.  
+As a 2nd-year Computer Science student, I architect systems using Python, C/C++, and modern web technologies.
+        <!-- <a href="/about"  class="know-more-link">Know More</a> -->
+        <!-- (HTML/CSS, Flask, SQL). I enjoy turning ideas into functional applications—whether it’s crafting clean front-end interfaces, optimizing database workflows, or solving algorithmic challenges. Currently exploring backend development with Flask and deepening my understanding of data structures, I’m always eager to learn and collaborate on impactful projects. -->
+      </p>
+      <a href="#about" class="talk-button">Know More →</a>
+    </section>
+  </main>
+  <!-- Scroll Down About  -->
+<section id="about" class="about-section">
+  <div class="about-container">
+    <h5 class="section-subtitle" data-aos="fade-down">BIT ABOUT ME</h5>
+    <h2 class="section-title" data-aos="fade-down" data-aos-delay="100">Who am I?</h2>
+    <div class="divider" data-aos="fade-down" data-aos-delay="150"></div>
+
+    <div class="about-content">
+      <div class="about-details" data-aos="fade-right">
+        <div class="bio-card" data-aos="fade-up">
+          <p class="animated-text">
+            A passionate 2nd-year Computer Science student specializing in full-stack development. 
+            I thrive on transforming complex problems into elegant solutions using Python, C/C++, 
+            and modern web technologies (HTML/CSS, Flask, SQL). I enjoy turning ideas into functional 
+            applications—whether it’s crafting clean front-end interfaces, optimizing database workflows, 
+            or solving algorithmic challenges. Currently exploring backend development with Flask and 
+            deepening my understanding of data structures, I’m always eager to learn and collaborate on impactful 
+            projects..
+          </p>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="info-icon">👩‍💻</div>
+            <label>Name</label>
+            <div class="info-content">KUSHALTA</div>
+          </div>
+          <div class="info-box" data-aos="zoom-in" data-aos-delay="250">
+            <div class="info-icon">✉️</div>
+            <label>Email</label>
+            <div class="info-content">kushalta162@gmail.com</div>
+          </div>
+          <div class="info-box" data-aos="zoom-in" data-aos-delay="300">
+            <div class="info-icon">📍</div>
+            <label>Address</label>
+            <div class="info-content">Hoshiarpur, Punjab</div>
+          </div>
+          <div class="info-box" data-aos="zoom-in" data-aos-delay="350">
+            <div class="info-icon">📞</div>
+            <label>Phone</label>
+            <div class="info-content">7973018625</div>
+          </div>
+        </div>
+
+        <div class="action-box" data-aos="fade-up" data-aos-delay="400">
+          <button class="cv-button">
+            <span class="button-icon">⬇</span>
+            <span class="button-text">Download CV</span>
+            <span class="button-hover"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- skills sec -->
+ <section class="skills">
+    <section class="skills-section">
+      <div class="section-header">
+        <h5 class="section-subtitle">MY CAPABILITIES</h5>
+        <h2 class="section-title">Skills & Expertise</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="skills-container">
+        <!-- Technical Skills Column -->
+        <div class="skills-column">
+          <h3 class="column-title">Technical Skills</h3>
+          <div class="charts-container">
+            <div class="chart-card">
+              <h4 class="chart-title">Python</h4>
+              <div class="chart-wrapper">
+                <canvas id="pythonChart"></canvas>
+              </div>
+            </div>
+            <div class="chart-card">
+              <h4 class="chart-title">C/C++</h4>
+              <div class="chart-wrapper">
+                <canvas id="cppChart"></canvas>
+              </div>
+            </div>
+            <div class="chart-card">
+              <h4 class="chart-title">HTML/CSS</h4>
+              <div class="chart-wrapper">
+                <canvas id="htmlChart"></canvas>
+              </div>
+            </div>
+            <div class="chart-card">
+              <h4 class="chart-title">JavaScript</h4>
+              <div class="chart-wrapper">
+                <canvas id="jsChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Professional Skills Column -->
+        <div class="skills-column">
+          <h3 class="column-title">Professional Skills</h3>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Problem Solving</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Teamwork</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Communication</span>
+              <span>80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="80%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Time Management</span>
+              <span>75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="75%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Creativity</span>
+              <span>88%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="88%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <script>
+    // Initialize pie charts
+    document.addEventListener('DOMContentLoaded', function() {
+      // Chart colors
+      const colors = {
+        python: ['#306998', '#FFD43B'],
+        cpp: ['#004482', '#659AD2'],
+        html: ['#E34F26', '#F06529'],
+        js: ['#F7DF1E', '#323330']
+      };
+
+      // Pie chart config
+      const chartConfig = {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            data: [85, 15], // Skill percentage vs remaining
+            backgroundColor: [colors.python[0], 'rgba(255, 255, 255, 0.1)'],
+            borderWidth: 0,
+            cutout: '70%'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: { enabled: false }
+          },
+          animation: {
+            animateScale: true,
+            animateRotate: true
+          }
+        }
+      };
+
+      // Create charts
+      new Chart(
+        document.getElementById('pythonChart'),
+        {
+          ...chartConfig,
+          data: {
+            datasets: [{
+              ...chartConfig.data.datasets[0],
+              backgroundColor: [colors.python[0], 'rgba(255, 255, 255, 0.1)']
+            }]
+          }
+        }
+      );
+
+      new Chart(
+        document.getElementById('cppChart'),
+        {
+          ...chartConfig,
+          data: {
+            datasets: [{
+              ...chartConfig.data.datasets[0],
+              backgroundColor: [colors.cpp[0], 'rgba(255, 255, 255, 0.1)'],
+              data: [80, 20]
+            }]
+          }
+        }
+      );
+
+      new Chart(
+        document.getElementById('htmlChart'),
+        {
+          ...chartConfig,
+          data: {
+            datasets: [{
+              ...chartConfig.data.datasets[0],
+              backgroundColor: [colors.html[0], 'rgba(255, 255, 255, 0.1)'],
+              data: [90, 10]
+            }]
+          }
+        }
+      );
+
+      new Chart(
+        document.getElementById('jsChart'),
+        {
+          ...chartConfig,
+          data: {
+            datasets: [{
+              ...chartConfig.data.datasets[0],
+              backgroundColor: [colors.js[0], 'rgba(255, 255, 255, 0.1)'],
+              data: [75, 25]
+            }]
+          }
+        }
+      );
+
+      // Animate progress bars
+      document.querySelectorAll('.skill-progress').forEach(bar => {
+        const width = bar.getAttribute('data-width');
+        setTimeout(() => {
+          bar.style.width = width;
+        }, 100);
+      });
+    });
+  </script>
+
+
+
+
+</body>
+</html>

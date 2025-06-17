@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Skills</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --dark-bg: #353030dd;
+      --teal: #64ffda;
+      --blue: #1e90ff;
+      --light: #e5e7eb;
+      --dark-gray: #112240;
+      --gray: #a8b2d1;
+    }
+
+    /* * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    } */
+
+    .skills {
+      font-family: 'Inter', sans-serif;
+      background:
+      radial-gradient(circle at 50% 50%, 
+      rgba(15, 15, 15, 0.002) 10px, 
+      transparent 1px),
+      linear-gradient(rgba(255,255,255,0.003) 5px, transparent 0.5px),/* horizintal lines*/
+    linear-gradient(90deg, rgba(255,255,255,0.003) 5px, transparent 0.5px);/*vertical lines*/
+    /* ) */
+    background-size: 
+    40px 40px, /* Dot spacing  */
+    20px 20px, /*Grid spacing */
+    20px 20px; /* Grid spacing*/
+    height:850px;
+    background-color:var(--dark-bg) ;
+    /* background-color: black; */
+      color: var(--light);
+      line-height: 1.6;
+    }
+
+    .skills-section {
+      padding: 40px ;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, var(--light), var(--teal));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .divider {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(to right, var(--teal), var(--blue));
+      margin: 0 auto;
+      border-radius: 3px;
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 0 20px;
+    }
+
+    .skills-column {
+      background: rgba(17, 34, 64, 0.6);
+      backdrop-filter: blur(8px);
+      border-radius: 12px;
+      padding: 30px;
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .skills-column:hover {
+      transform: translateY(-5px);
+    }
+
+    .column-title {
+      font-size: 1.5rem;
+      color: var(--teal);
+      margin-bottom: 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    .column-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 2px;
+      background: var(--teal);
+    }
+
+    /* Technical Skills - Pie Charts */
+    .charts-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .chart-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .chart-title {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: var(--gray);
+    }
+
+    .chart-wrapper {
+      position: relative;
+      height: 120px;
+      margin: 0 auto;
+    }
+
+    /* Professional Skills - Poll Bars */
+    .skill-item {
+      margin-bottom: 25px;
+    }
+
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+
+    .skill-bar {
+      height: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .skill-progress {
+      height: 100%;
+      border-radius: 5px;
+      background: linear-gradient(90deg, var(--teal), var(--blue));
+      position: relative;
+      transition: width 1.5s ease-out;
+      width: 0;
+    }
+
+    .skill-progress::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.3)
+      );
+      animation: shine 2s infinite;
+    }
+
+    @keyframes shine {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .skills-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .charts-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="skills">
+    <section class="skills-section">
+      <div class="section-header">
+        <h5 class="section-subtitle">MY CAPABILITIES</h5>
+        <h2 class="section-title">Skills & Expertise</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="skills-container">
+        <!-- Technical Skills Column -->
+        <div class="skills-column">
+          <h3 class="column-title">Technical Skills</h3>
+          <div class="charts-container">
+            <div class="chart-card">
+              <h4 class="chart-title">Python</h4>
+              <div class="chart-wrapper">
+                <canvas id="pythonChart"></canvas>
+              </div>
+            </div>
+            <div class="chart-card">
+              <h4 class="chart-title">C/C++</h4>
+              <div class="chart-wrapper">
+                <canvas id="cppChart"></canvas>
+              </div>
+            </div>
+            <div class="chart-card">
+              <h4 class="chart-title">HTML/CSS</h4>
+              <div class="chart-wrapper">
+                <canvas id="htmlChart"></canvas>
+              </div>
+            </div>
+            <div class="chart-card">
+              <h4 class="chart-title">JavaScript</h4>
+              <div class="chart-wrapper">
+                <canvas id="jsChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Professional Skills Column -->
+        <div class="skills-column">
+          <h3 class="column-title">Professional Skills</h3>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Problem Solving</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Teamwork</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Communication</span>
+              <span>80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="80%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Time Management</span>
+              <span>75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="75%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Creativity</span>
+              <span>88%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-width="88%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <script>
+    // Initialize pie charts
+    document.addEventListener('DOMContentLoaded', function() {
+      // Chart colors
+      const colors = {
+        python: ['#306998', '#FFD43B'],
+        cpp: ['#004482', '#659AD2'],
+        html: ['#E34F26', '#F06529'],
+        js: ['#F7DF1E', '#323330']
+      };
+
+      // Pie chart config
+      const chartConfig = {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            data: [85, 15], // Skill percentage vs remaining
+            backgroundColor: [colors.python[0], 'rgba(255, 255, 255, 0.1)'],
+            borderWidth: 0,
+            cutout: '70%'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: { enabled: false }
+          },
+          animation: {
+            animateScale: true,
+            animateRotate: true
+          }
+        }
+      };
+
+      // Create charts
+      new Chart(
+        document.getElementById('pythonChart'),
+        {
+          ...chartConfig,
+          data: {
+            datasets: [{
+              ...chartConfig.data.datasets[0],
+              backgroundColor: [colors.python[0], 'rgba(255, 255, 255, 0.1)']
+            }]
+          }
+        }
+      );
+
+      new Chart(
+        document.getElementById('cppChart'),
+        {
+          ...chartConfig,
+          data: {
+            datasets: [{
+              ...chartConfig.data.datasets[0],
+              backgroundColor: [colors.cpp[0], 'rgba(255, 255, 255, 0.1)'],
+              data: [80, 20]
+            }]
+          }
+        }
+      );
+
+      new Chart(
+        document.getElementById('htmlChart'),
+        {
+          ...chartConfig,
+          data: {
+            datasets: [{
+              ...chartConfig.data.datasets[0],
+              backgroundColor: [colors.html[0], 'rgba(255, 255, 255, 0.1)'],
+              data: [90, 10]
+            }]
+          }
+        }
+      );
+
+      new Chart(
+        document.getElementById('jsChart'),
+        {
+          ...chartConfig,
+          data: {
+            datasets: [{
+              ...chartConfig.data.datasets[0],
+              backgroundColor: [colors.js[0], 'rgba(255, 255, 255, 0.1)'],
+              data: [75, 25]
+            }]
+          }
+        }
+      );
+
+      // Animate progress bars
+      document.querySelectorAll('.skill-progress').forEach(bar => {
+        const width = bar.getAttribute('data-width');
+        setTimeout(() => {
+          bar.style.width = width;
+        }, 100);
+      });
+    });
+  </script>
+</body>
+</html>
