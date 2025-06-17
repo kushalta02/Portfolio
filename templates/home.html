@@ -328,9 +328,141 @@ As a 2nd-year Computer Science student, I architect systems using Python, C/C++,
       });
     });
   </script>
+<section class="contact-section">
+    <div class="section-header">
+      <h5 class="section-subtitle">GET IN TOUCH</h5>
+      <h2 class="section-title">Contact Me</h2>
+      <div class="divider"></div>
+    </div>
 
+    <div class="contact-container">
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="contact-details">
+            <h3>Phone</h3>
+            <p><a href="tel:+917973018625">+91 7973018625</a></p>
+          </div>
+        </div>
 
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-details">
+            <h3>Email</h3>
+            <p><a href="mailto:kushalta162@gmail.com">kushalta162@gmail.com</a></p>
+          </div>
+        </div>
 
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="contact-details">
+            <h3>Location</h3>
+            <p>Hoshiarpur, Punjab, India</p>
+          </div>
+        </div>
 
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div class="contact-details">
+            <h3>Availability</h3>
+            <p>Monday - Friday: 9am - 5pm</p>
+            <p>Weekends: Limited availability</p>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href=" https://www.linkedin.com/in/kushalta-079a592b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/kushalta02" class="social-link" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="[YOUR_TWITTER_URL]" class="social-link" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="[YOUR_INSTAGRAM_URL]" class="social-link" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" class="form-control" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Simple form submission handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      // Here you would typically send this data to a server
+      console.log({ name, email, subject, message });
+      
+      // Show success message
+      alert(`Thanks for your message, ${name}! I'll get back to you soon.`);
+      
+      // Reset form
+      this.reset();
+    });
+
+    // Animate contact cards on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactCards = document.querySelectorAll('.contact-card');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      contactCards.forEach(card => {
+        card.style.opacity = 0;
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+      });
+    });
+  </script>
 </body>
 </html>
