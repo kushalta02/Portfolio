@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+</head>
+<body>
+   <nav class="navbar">
+
+    <div class="logo">
+        Kushalta
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="/"
+               class="{% if request.path == '/' %}active{% endif %}">
+               Home
+            </a>
+        </li>
+
+        <li>
+            <a href="/About"
+               class="{% if request.path == '/About' %}active{% endif %}">
+               About
+            </a>
+        </li>
+
+        <li>
+            <a href="/Skills"
+               class="{% if request.path == '/Skills' %}active{% endif %}">
+               Skills
+            </a>
+        </li>
+
+        <li>
+            <a href="/Experience"
+               class="{% if request.path == '/Experience' %}active{% endif %}">
+               Experience
+            </a>
+        </li>
+
+        <li>
+            <a href="/Projects"
+               class="{% if request.path == '/Projects' %}active{% endif %}">
+               Projects
+            </a>
+        </li>
+
+        <li>
+            <a href="/Certificates"
+               class="{% if request.path == '/Certificates' %}active{% endif %}">
+               Certificates
+            </a>
+        </li>
+
+        <li>
+            <a href="/Contact"
+               class="{% if request.path == '/Contact' %}active{% endif %}">
+               Contact
+            </a>
+        </li>
+
+    </ul>
+
+    <a href="/Resume" class="resume-btn">
+        Resume
+    </a>
+
+</nav>
+</body>

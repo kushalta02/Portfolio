@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+
+<section class="projects-section">
+
+    <div class="projects-header">
+        <h1>My Projects</h1>
+        <p>Real-world builds, ideas, and systems I designed & developed</p>
+    </div>
+
+    <div class="projects-grid">
+
+        <!-- BusGuardian -->
+        <div class="project-card">
+
+            <img src="/static/images/busgurdian.png" class="project-img">
+
+            <div class="project-top">
+                <h2>🚌 BusGuardian</h2>
+                <span>Full Stack • Flask • Leaflet • Cloudant</span>
+            </div>
+
+            <p>
+                Real-time school bus tracking system where parents can track live bus location,
+                view routes, and receive automated attendance updates based on GPS stop detection.
+            </p>
+
+            <div class="project-links">
+                <a href="https://github.com/kushalta02/BusGurdian" class="btn github">
+                    <i class="fab fa-github"></i> Code
+                </a>
+
+                <a href="https://your-live-demo-link.com" class="btn live">
+                    🔗 Live Demo
+                </a>
+            </div>
+        </div>
+
+        <!-- Smart Car Door -->
+        <div class="project-card">
+
+            <img src="/static/images/smartcar.png" class="project-img">
+
+            <div class="project-top">
+                <h2>🚗 VISION KEY -Smart Car Door Unlock</h2>
+                <span>IoT • Arduino • Embedded Systems</span>
+            </div>
+
+            <p>
+                Arduino-based smart vehicle locking system that enables secure access using
+                authentication-based unlocking and hardware control logic.
+            </p>
+
+            <div class="project-links">
+                <a href="https://github.com/kushalta02/Vision-Key" class="btn github">
+                    <i class="fab fa-github"></i> Code
+                </a>
+
+                <a href="#" class="btn live">
+                    🔗 Demo
+                </a>
+            </div>
+        </div>
+
+        <!-- LifeMirror -->
+        <div class="project-card">
+
+            <img src="/static/images/lifemirror1.png" class="project-img">
+
+            <div class="project-top">
+                <h2>🪞 LifeMirror</h2>
+                <span>Digital Twin Concept • System Design</span>
+            </div>
+
+            <p>
+                A digital twin inspired concept that simulates user activity and system behavior.
+                Focused on real-time reflection logic and system thinking.
+            </p>
+
+            <div class="project-links">
+                <a href="https://github.com/kushalta02/LIFEMirror" class="btn github">
+                    <i class="fab fa-github"></i> Code
+                </a>
+
+                <a href="#" class="btn live">
+                    🔗 View
+                </a>
+            </div>
+        </div>
+
+        <!-- Grievance System -->
+        <div class="project-card">
+
+            <img src="/static/images/sys.png" class="project-img">
+
+            <div class="project-top">
+                <h2>📩 Municipal Grievance Management System</h2>
+                <span>Class 12 • Python • Basic Web App</span>
+            </div>
+
+            <p>
+                A complaint management system where users can submit grievances,
+                track status updates, and manage issue resolution workflow.
+            </p>
+
+            <div class="project-links">
+                <a href="https://github.com/kushalta02/grievance_sys" class="btn github">
+                    <i class="fab fa-github"></i> Code
+                </a>
+
+                <a href="#" class="btn live">
+                    🔗 Demo
+                </a>
+            </div>
+        </div>
+
+        <!-- Portfolio -->
+        <!-- <div class="project-card">
+
+            <img src="{{ url_for('static', filename='images/portfolio.jpg') }}" class="project-img">
+
+            <div class="project-top">
+                <h2>💻 Portfolio Website</h2>
+                <span>Frontend • HTML • CSS • JS</span>
+            </div>
+
+            <p>
+                A modern portfolio website with animations, loader system, projects section,
+                skills showcase, and responsive UI design.
+            </p>
+
+            <div class="project-links">
+                <a href="https://github.com/kushalta02/portfolio" class="btn github">
+                    <i class="fab fa-github"></i> Code
+                </a>
+
+                <a href="#" class="btn live">
+                    🔗 Live
+                </a>
+            </div>
+        </div> -->
+
+    </div>
+
+</section>
+
+{% endblock %}

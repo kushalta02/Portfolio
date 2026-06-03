@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+</head>
+
+<body>
+
+    <!-- LOADER -->
+    <div id="loader">
+
+        <div class="loader-content">
+
+            <lottie-player
+                src="{{ url_for('static', filename='animations/loader.json') }}"
+                loop
+                autoplay>
+            </lottie-player>
+
+            
+
+        </div>
+
+    </div>
+
+    <!-- NAVBAR -->
+    {% include 'components/navbar.html' %}
+
+    <!-- PAGE CONTENT -->
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    <!-- FOOTER -->
+    {% include 'components/footer.html' %}
+
+    <!-- LOADER SCRIPT -->
+    <script>
+
+    window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+
+    loader.style.opacity = "0";
+
+    setTimeout(() => {
+        loader.style.display = "none";
+    }, 800);
+});
+    </script>
+
+</body>
+
+</html>
+

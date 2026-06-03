@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}Resume{% endblock %}
+
+{% block content %}
+
+<section class="resume-section">
+
+    <div class="resume-header">
+        <h1>My Resume</h1>
+        <p>Explore my qualifications, projects, skills, and achievements.</p>
+    </div>
+
+    <div class="resume-container">
+
+        <div class="resume-preview">
+
+            <iframe
+                src="{{ url_for('static', filename='resume/resume.pdf') }}"
+                width="100%"
+                height="700">
+            </iframe>
+
+        </div>
+
+        <div class="resume-actions">
+
+            <a
+                href="/static/images/RESUME.pdf"
+                download
+                class="resume-btn download">
+
+                <i class="fas fa-download"></i>
+                Download Resume
+
+            </a>
+
+            <a
+                href="mailto:kushalta162@gmail.com?subject=Resume Request"
+                class="resume-btn email">
+
+                <i class="fas fa-envelope"></i>
+                Email Me
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

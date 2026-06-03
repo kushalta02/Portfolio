@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block title %}
+Contact
+{% endblock %}
+{% block content %}
+<!-- =========================
+        CONTACT PAGE
+========================= -->
+
+<section class="contact-hero">
+    <span class="section-tag">CONTACT</span>
+    <h1>Let’s Work Together</h1>
+    <p>
+        Have an idea, project, or collaboration in mind?  
+        Feel free to reach out — I usually reply within a day.
+    </p>
+</section>
+
+<section class="contact-section">
+
+    <div class="contact-container">
+
+        <!-- LEFT INFO -->
+        <div class="contact-info">
+
+            <h2>Get in Touch</h2>
+
+            <div class="info-box">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                    <h4>Email</h4>
+                    <p>yourmail@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <i class="fa-brands fa-linkedin"></i>
+                <div>
+                    <h4>LinkedIn</h4>
+                    <p>linkedin.com/in/yourprofile</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <i class="fa-brands fa-github"></i>
+                <div>
+                    <h4>GitHub</h4>
+                    <p>github.com/yourusername</p>
+                </div>
+            </div>
+
+            <p class="note">
+                Open for internships, freelance, and collaboration opportunities.
+            </p>
+
+        </div>
+
+        <!-- RIGHT FORM -->
+        <div class="contact-form">
+
+            <form action="https://formspree.io/f/mdavnned" method="POST">
+
+                <div class="input-row">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+
+                <input type="text" name="subject" placeholder="Subject" required>
+
+                <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+
+                <button type="submit">Send Message</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+{% endblock %}

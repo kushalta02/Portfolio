@@ -1,0 +1,257 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        
+        <h1>
+            Hi, I'm <span>Kushalta</span>
+        </h1>
+
+        <h2>
+            <span id="typing"></span>
+        </h2>
+
+
+        <p class="hero-description">
+            Computer Science Engineering student focused on building intelligent, real-world systems using AI/ML,
+            Full-Stack Development, Computer Vision, and Automation. I enjoy turning complex ideas into scalable,
+            impactful, and production-ready applications.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="/Projects" class="primary-btn">
+                View Projects →
+            </a>
+
+            <a href="/Contact" class="secondary-btn">
+                Hire Me
+            </a>
+
+        </div>
+    
+        <div class="hero-stats">
+
+            <div class="stat-card">
+                <h3 class="counter" data-target="5">0</h3>
+                <p>Projects</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 class="counter" data-target="15">0</h3>
+                <p>Technologies</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 class="counter" data-target="4">0</h3>
+                <p>Years Coding</p>
+            </div>
+            
+
+            <div class="stat-card">
+                <h3 class="counter" data-target="{{views}}">0</h3>
+                <p>Views</p>
+            </div>
+
+        </div>
+
+        <div class="live-info">
+
+            <div class="time-box">
+                <span id="currentTime"></span>
+            </div>
+
+            <div class="date-box">
+                <span id="currentDate"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-image">
+
+        <img src="{{ url_for('static', filename='images/portfolio.jpeg') }}"
+             alt="Profile Image">
+
+    </div>
+
+</section>
+
+
+<section class="featured-project">
+
+    <div class="section-header">
+        <h2>Projects That Define My Journey</h2>
+        <p>
+            Real-world systems built to solve meaningful problems using AI, automation, and smart engineering.
+        </p>
+    </div>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='images/visionkey.png') }}" alt="Vision Key">
+
+            <div class="project-content">
+
+                <h3>Vision Key</h3>
+
+                <p>
+                    Smart vehicle access system using intelligent authentication and real-time security monitoring
+                    for secure keyless entry.
+                </p>
+
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>Computer Vision</span>
+                    <span>IoT</span>
+                    <span>Security</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="/static/images/lifemirror.png" alt="Life Mirror">
+
+            <div class="project-content">
+
+                <h3>Life Mirror</h3>
+
+                <p>
+                    AI-powered system designed to analyze and enhance everyday human experiences through intelligent insights.
+                </p>
+
+                <div class="project-tech">
+                    <span>AI</span>
+                    <span>Data Analytics</span>
+                    <span>Full Stack</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="project-cta">
+        <a href="/Projects" class="project-btn">Explore More</a>
+    </div>
+
+</section>
+
+
+<section class="cta-section">
+
+    <div class="cta-content">
+
+        <h2>Let's Build Something Meaningful Together</h2>
+
+        <p>
+            Open for freelance work, collaborations, internships, and innovative tech projects.
+        </p>
+
+        <a href="/Contact" class="cta-btn">
+            Let's Connect 
+        </a>
+
+    </div>
+
+</section>
+<script>
+
+// COUNTER ANIMATION
+
+const counters=document.querySelectorAll('.counter');
+
+counters.forEach(counter=>{
+
+    const update=()=>{
+
+        const target=+counter.getAttribute('data-target');
+        const count=+counter.innerText;
+
+        const increment=target/80;
+
+        if(count<target){
+
+            counter.innerText=
+            Math.ceil(count+increment);
+
+            setTimeout(update,20);
+
+        }else{
+
+            counter.innerText=target+"+";
+
+        }
+    }
+
+    update();
+
+});
+
+// LIVE TIME
+
+function updateClock(){
+
+    const now=new Date();
+
+    document.getElementById("currentTime").innerHTML=
+    now.toLocaleTimeString();
+
+    document.getElementById("currentDate").innerHTML=
+    now.toDateString();
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
+
+// TYPING EFFECT
+
+const roles=[
+"AI/ML Engineer",
+"Full Stack Developer",
+"Problem Solver",
+"Computer Vision Enthusiast"
+];
+
+let roleIndex=0;
+let charIndex=0;
+
+function typeRole(){
+
+    let currentRole=roles[roleIndex];
+
+    document.getElementById("typing").textContent=
+    currentRole.substring(0,charIndex);
+
+    charIndex++;
+
+    if(charIndex>currentRole.length){
+
+        setTimeout(()=>{
+
+            charIndex=0;
+
+            roleIndex=
+            (roleIndex+1)%roles.length;
+
+        },1500);
+    }
+
+    setTimeout(typeRole,120);
+}
+
+typeRole();
+
+</script>
+{% endblock %}
