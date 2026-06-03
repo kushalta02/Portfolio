@@ -11,6 +11,9 @@
     <div class="logo">
         Kushalta
     </div>
+    <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
 
     <ul class="nav-links">
 
@@ -70,4 +73,19 @@
     </a>
 
 </nav>
+<script>
+
+const menuToggle =
+document.getElementById("menu-toggle");
+
+const navLinks =
+document.getElementById("nav-links");
+
+menuToggle.addEventListener("click",()=>{
+
+    navLinks.classList.toggle("active");
+
+});
+
+</script>
 </body>
