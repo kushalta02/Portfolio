@@ -10,58 +10,7 @@
 a{
     text-decoration:none;
 }
-.menu-toggle{
-    display:none;
-}
 
-/* MOBILE */
-
-@media screen and (max-width:768px){
-
-    .navbar{
-        position:relative;
-    }
-
-    .menu-toggle{
-        display:block;
-        font-size:28px;
-        cursor:pointer;
-        color:white;
-    }
-
-    .resume-btn{
-        display:none;
-    }
-
-    .nav-links{
-
-        position:absolute;
-
-        top:100%;
-
-        left:0;
-
-        width:100%;
-
-        background:#111827;
-
-        flex-direction:column;
-
-        align-items:center;
-
-        gap:20px;
-
-        padding:25px 0;
-
-        display:none;
-
-        z-index:999;
-    }
-
-    .nav-links.active{
-        display:flex;
-    }
-}
 
 /* body::before{
     content:"";
@@ -1965,4 +1914,69 @@ button:hover{
 .resume-btn:hover{
 
     transform:translateY(-3px);
+}
+/* ==========================
+   MOBILE NAVBAR
+========================== */
+
+.menu-toggle{
+    display:none;
+}
+
+/* Mobile */
+
+@media screen and (max-width:768px){
+
+    .navbar{
+        position:relative;
+        padding:18px 6%;
+    }
+
+    .menu-toggle{
+        display:block;
+        color:#fff;
+        font-size:28px;
+        cursor:pointer;
+    }
+
+    /* Hide Resume Button */
+
+    .resume-btn{
+        display:none;
+    }
+
+    /* Hide menu by default */
+
+    .nav-links{
+
+        display:none !important;
+
+        position:absolute;
+
+        top:100%;
+        left:0;
+
+        width:100%;
+
+        background:#0f172a;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        padding:25px 0;
+
+        gap:20px;
+
+        box-shadow:
+        0 10px 25px rgba(0,0,0,.4);
+
+        z-index:999;
+    }
+
+    /* Show after click */
+
+    .nav-links.active{
+        display:flex !important;
+    }
 }
