@@ -10,28 +10,35 @@
 a{
     text-decoration:none;
 }
-/* Hamburger */
-
 .menu-toggle{
     display:none;
-    font-size:28px;
-    color:white;
-    cursor:pointer;
 }
 
-/* Mobile */
+/* MOBILE */
 
-@media(max-width:768px){
+@media screen and (max-width:768px){
+
+    .navbar{
+        position:relative;
+    }
 
     .menu-toggle{
         display:block;
+        font-size:28px;
+        cursor:pointer;
+        color:white;
+    }
+
+    .resume-btn{
+        display:none;
     }
 
     .nav-links{
 
         position:absolute;
 
-        top:80px;
+        top:100%;
+
         left:0;
 
         width:100%;
@@ -42,21 +49,17 @@ a{
 
         align-items:center;
 
-        gap:25px;
+        gap:20px;
 
-        padding:30px 0;
+        padding:25px 0;
 
         display:none;
 
-        box-shadow:0 10px 25px rgba(0,0,0,.2);
+        z-index:999;
     }
 
     .nav-links.active{
         display:flex;
-    }
-
-    .resume-btn{
-        display:none;
     }
 }
 
