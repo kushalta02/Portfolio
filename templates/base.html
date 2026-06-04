@@ -53,17 +53,23 @@
 
     <!-- LOADER SCRIPT -->
     <script>
+document.addEventListener("DOMContentLoaded", () => {
+    // ensure loader is visible immediately
+    document.body.classList.remove("loaded");
+});
 
-    window.addEventListener("load", () => {
+window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
 
     loader.style.opacity = "0";
 
+    document.body.classList.add("loaded");
+
     setTimeout(() => {
         loader.style.display = "none";
-    }, 800);
+    }, 1000);
 });
-    </script>
+</script>
 
 </body>
 
