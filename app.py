@@ -27,7 +27,7 @@ print("Database created successfully!")
 
 
 @app.route("/")
-def home():
+def index():
 
     conn = sqlite3.connect("portfolio.db")
     cursor = conn.cursor()
@@ -55,7 +55,7 @@ def home():
     conn.close()
 
     return render_template(
-        "home.html",
+        "index.html",
         views=views
     )
 @app.route("/About")
